@@ -1,0 +1,12 @@
+
+SP's should have as their first table:
+Severity int -- if 1, stops process, 2: info/documenting results, 3: transitory ui messages
+Context varchar(1000) - a way to id a record if needed
+Message varchar(1000)
+
+Methods:
+ExecuteStoredProcedure(connection, spName)
+CreateFileFromStoredProcedure(connection, spName, fileType, fileName[with mask])
+SftpAndArchive(VendorName, fileName[should be passed in propertybag], archiveLocation[may be inferable from VendorName])
+
+	insert into #ProcessRunnerReporting (Severity, Context, Message) values (1, null, 'Number of EE AltIDs set = ' + convert(varchar,@@ROWCOUNT))

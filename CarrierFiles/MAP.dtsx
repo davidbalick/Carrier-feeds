@@ -1,0 +1,1470 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2017 10:45:29 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="JOSHUA-P4600"
+  DTS:CreatorName="JOSHUA-P4600\Joshua"
+  DTS:DTSID="{6C8ACE3A-C3BF-47CC-A248-C5164716656D}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="MAP"
+  DTS:PackageType="5"
+  DTS:VersionBuild="51"
+  DTS:VersionGUID="{1BD723BD-52AE-4E9E-8724-235290FA53E7}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[MAP Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{E0CC8543-5BB6-4658-9F4C-EAFCD3689C17}"
+      DTS:ObjectName="MAP Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::OutputFileWithPath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\SSIS Out\MAP_WellN_20180718.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Group Name"
+              DTS:DTSID="{DBBDB5F6-2220-42FC-950D-A77786789DB1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Group Number"
+              DTS:DTSID="{DAD309B2-A5E7-4977-ACE5-D136F54DBA1D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="AltID"
+              DTS:DTSID="{32F3F245-7A42-440E-9FF8-4B0BE1AEC224}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{9B0FFBFE-8BE5-4E7B-BB5C-761EBCF7AC97}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{DB2F1BE6-CE17-4BAC-B690-71754F680401}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{C38F6A79-B61D-4201-AE8B-FC99A2F4F8C1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Date Of Birth"
+              DTS:DTSID="{F9DB09D7-D014-48D1-9814-B1FCEFC545CC}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Relationship"
+              DTS:DTSID="{4722B86E-B1B5-49C1-B6E9-70A5421A4464}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="35"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address Line 1"
+              DTS:DTSID="{DC3FD4DC-B289-4FC5-A5BD-F3E1E96344A2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="35"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address Line 2"
+              DTS:DTSID="{EEC0037A-9C74-4ED0-9C33-8C40C4DEABA6}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{258BB4AB-310D-47D5-8303-5CA99B9560D4}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{0651ADDF-27F3-4FB2-A191-625D3FD0EB7A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Zip Code"
+              DTS:DTSID="{41E46D66-B11A-4C8C-B62B-1D5043FAF4D9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone"
+              DTS:DTSID="{D41CCBBC-1193-442F-B4B9-736D66D1D62A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="WorkPhone"
+              DTS:DTSID="{58FEAE8E-D28E-4094-9CD9-37336F9B1B13}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="CellPhone"
+              DTS:DTSID="{6EFE369D-9DBB-4A32-B7CE-824999843B73}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email"
+              DTS:DTSID="{0915E2C0-1E10-47C6-AD13-2BEE5D9E638D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="OrigEffectiveDate"
+              DTS:DTSID="{B7FD2028-1DE2-4DA2-8673-C115EA026117}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="TerminationDate"
+              DTS:DTSID="{5DA19028-849E-4B48-8871-8356027907CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="PlanName"
+              DTS:DTSID="{4E54A5BA-100D-4F4B-BD70-F0A535EB8831}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x0009_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="COBRAStatus"
+              DTS:DTSID="{AAC85761-4091-494C-B352-777310703C09}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="HasOtherCoverage"
+              DTS:DTSID="{3FFE51DB-FE32-42AB-85B1-2FDB466DE39D}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{0782EF9A-6D3D-4744-B5C4-CBF16C5DCF17}"
+      DTS:ObjectName="Path_To_OutputDirectory">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Temp\SSIS Out</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{BEF0A6BF-CAA1-4E71-9370-3C10591C92B3}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;MAP_WellN_&quot; + (DT_WSTR,4)DatePart(&quot;yyyy&quot;, GetDate()) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;mm&quot;, GetDate()), 2) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;dd&quot;, GetDate()), 2)&#xA;+ &quot;.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">MAP_WellN_20180718.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{3D18D0F5-E780-4BC9-893C-5CB5422D78B8}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Path_To_OutputDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{AFB27EC5-F979-4A33-AB18-8B93FBB20EA1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FilePath]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputFileWithPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out\MAP_WellN_20180718.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F846CD7C-4256-453F-A6F7-3326CDEF40A6}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputRowData">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{855B6591-ADAE-4E39-89D4-8F0CF83F0DEC}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RetVal">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AltID Maintenance"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{B8AEC26C-95BF-42AC-BB3A-D7CAB74335F5}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AltID Maintenance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03D2AB9C-4512-41BA-8F27-204A5001CF29}"
+          SQLTask:SqlStatementSource="EXEC [enroll].[NVX_AltID_Maintenance]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\MAP File"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{2F01CDAE-5201-47A8-8F4A-52F3F3D8B67C}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="MAP File">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\MAP File\MAP Flat File Destination"
+              componentClassID="DTSAdapter.FlatFileDestination.3"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="MAP Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MAP File\MAP Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[MAP Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[MAP Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Group Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Group Number"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Group Number]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Group Number]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[AltID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="AltID"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AltID]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[AltID]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Last Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Last Name"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Last Name]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Last Name]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[First Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="First Name"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[First Name]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[First Name]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Date Of Birth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Date Of Birth"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Date Of Birth]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Date Of Birth]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Relationship]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Relationship"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Relationship]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Relationship]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Address Line 1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="Address Line 1"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 1]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Address Line 1]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Address Line 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="35"
+                      cachedName="Address Line 2"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 2]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Address Line 2]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Zip Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Zip Code"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Zip Code]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Zip Code]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Phone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Phone"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Phone]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[WorkPhone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="WorkPhone"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[WorkPhone]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[WorkPhone]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[CellPhone]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="CellPhone"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CellPhone]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[CellPhone]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Email"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Email]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[OrigEffectiveDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="OrigEffectiveDate"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrigEffectiveDate]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[OrigEffectiveDate]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[TerminationDate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="TerminationDate"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TerminationDate]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[TerminationDate]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[PlanName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="PlanName"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PlanName]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[PlanName]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[COBRAStatus]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="COBRAStatus"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COBRAStatus]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[COBRAStatus]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[HasOtherCoverage]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="HasOtherCoverage"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[HasOtherCoverage]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[HasOtherCoverage]" />
+                    <inputColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].Columns[Group Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Group Name"
+                      externalMetadataColumnId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Group Name]"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Group Name]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Group Number" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[AltID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="AltID" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="First Name" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Date Of Birth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Date Of Birth" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Relationship" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Address Line 1" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Address Line 2" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Zip Code" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[WorkPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WorkPhone" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[CellPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CellPhone" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[OrigEffectiveDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="OrigEffectiveDate" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[TerminationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="TerminationDate" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[PlanName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PlanName" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[COBRAStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="COBRAStatus" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[HasOtherCoverage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="HasOtherCoverage" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Group Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Group Name" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\MAP File\OLE DB Source EXEC MAP"
+              componentClassID="DTSAdapter.OLEDBSource.3"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source EXEC MAP"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [enroll].[MAP_ElgibilityFile]
+WITH RESULT SETS (
+	 (
+		  [Group Name]			VARCHAR(100)
+		, [Group Number]			VARCHAR(10)
+		, [AltID]					VARCHAR(15)
+		, [Last Name]				VARCHAR(20)
+		, [First Name]				VARCHAR(15)
+		, [Gender]					VARCHAR(1)
+		, [Date Of Birth]			CHAR(10)
+		, [Relationship]			VARCHAR(10)
+		, [Address Line 1]			VARCHAR(35)
+		, [Address Line 2]			VARCHAR(35)
+		, [City]					VARCHAR(30)
+		, [State]					VARCHAR(2)
+		, [Zip Code]				VARCHAR(10)
+		, [Phone]					VARCHAR(50) NULL
+		, [WorkPhone]				VARCHAR(50) NULL
+		, [CellPhone]				VARCHAR(50) NULL
+		, [Email]					VARCHAR(50) NULL
+		, [OrigEffectiveDate]		CHAR(10)
+		, [TerminationDate]			CHAR(10)
+		, [PlanName]				VARCHAR(50)
+		, [COBRAStatus]				CHAR(1)
+		, [HasOtherCoverage]		CHAR(1)
+		)
+)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\MAP File\OLE DB Source EXEC MAP.Connections[OleDbConnection]"
+                  connectionManagerID="{03D2AB9C-4512-41BA-8F27-204A5001CF29}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HSAESQL2VM-1 HSNavanex Joshua Lynn]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Group Number]"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Group Number]"
+                      name="Group Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[AltID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[AltID]"
+                      length="15"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[AltID]"
+                      name="AltID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Last Name]"
+                      length="20"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Last Name]"
+                      name="Last Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[First Name]"
+                      length="15"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[First Name]"
+                      name="First Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Date Of Birth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Date Of Birth]"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Date Of Birth]"
+                      name="Date Of Birth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Relationship]"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Relationship]"
+                      name="Relationship"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Address Line 1]"
+                      length="35"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Address Line 1]"
+                      name="Address Line 1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Address Line 2]"
+                      length="35"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Address Line 2]"
+                      name="Address Line 2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="30"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      length="2"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Zip Code]"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Zip Code]"
+                      name="Zip Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Phone]"
+                      name="Phone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[WorkPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[WorkPhone]"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[WorkPhone]"
+                      name="WorkPhone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[CellPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[CellPhone]"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[CellPhone]"
+                      name="CellPhone"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Email]"
+                      name="Email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[OrigEffectiveDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[OrigEffectiveDate]"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[OrigEffectiveDate]"
+                      name="OrigEffectiveDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[TerminationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[TerminationDate]"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[TerminationDate]"
+                      name="TerminationDate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[PlanName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[PlanName]"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[PlanName]"
+                      name="PlanName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[COBRAStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[COBRAStatus]"
+                      length="1"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[COBRAStatus]"
+                      name="COBRAStatus"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[HasOtherCoverage]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[HasOtherCoverage]"
+                      length="1"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[HasOtherCoverage]"
+                      name="HasOtherCoverage"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Group Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Group Name]"
+                      length="100"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].Columns[Group Name]"
+                      name="Group Name"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Group Number" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[AltID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="AltID" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="First Name" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Date Of Birth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Date Of Birth" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Relationship" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Address Line 1" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      name="Address Line 2" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Zip Code" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Phone" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[WorkPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="WorkPhone" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[CellPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="CellPhone" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Email" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[OrigEffectiveDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="OrigEffectiveDate" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[TerminationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="TerminationDate" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[PlanName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="PlanName" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[COBRAStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="COBRAStatus" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[HasOtherCoverage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="HasOtherCoverage" />
+                    <externalMetadataColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output].ExternalColumns[Group Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Group Name" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Group Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Group Name]"
+                      name="Group Name" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Group Number]"
+                      name="Group Number" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[AltID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[AltID]"
+                      name="AltID" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Last Name]"
+                      name="Last Name" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[First Name]"
+                      name="First Name" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Date Of Birth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Date Of Birth]"
+                      name="Date Of Birth" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Relationship]"
+                      name="Relationship" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Address Line 1]"
+                      name="Address Line 1" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="35"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Address Line 2]"
+                      name="Address Line 2" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Zip Code]"
+                      name="Zip Code" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Phone]"
+                      name="Phone" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[WorkPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[WorkPhone]"
+                      name="WorkPhone" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[CellPhone]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[CellPhone]"
+                      name="CellPhone" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[Email]"
+                      name="Email" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[OrigEffectiveDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[OrigEffectiveDate]"
+                      name="OrigEffectiveDate" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[TerminationDate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[TerminationDate]"
+                      name="TerminationDate" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[PlanName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[PlanName]"
+                      name="PlanName" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[COBRAStatus]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[COBRAStatus]"
+                      name="COBRAStatus" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[HasOtherCoverage]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[HasOtherCoverage]"
+                      name="HasOtherCoverage" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\MAP File.Paths[OLE DB Source Output]"
+              endId="Package\MAP File\MAP Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\MAP File\OLE DB Source EXEC MAP.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{A0B3350F-C7F4-467C-8811-97599F4EDD36}"
+      DTS:From="Package\AltID Maintenance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\MAP File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\AltID Maintenance"
+          TopLeft="122,172" />
+        <NodeLayout
+          Size="119,42"
+          Id="Package\MAP File"
+          TopLeft="197.5,271.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="204.5,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="52.5,57.5"
+              Start="0,0"
+              End="52.5,50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.75"
+                    Point2="0,28.75"
+                    Point3="4,28.75" />
+                  <mssgle:LineSegment
+                    End="48.5,28.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="48.5,28.75"
+                    Point2="52.5,28.75"
+                    Point3="52.5,32.75" />
+                  <mssgle:LineSegment
+                    End="52.5,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\MAP File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\MAP File\OLE DB Source EXEC MAP"
+          TopLeft="186,277" />
+        <NodeLayout
+          Size="196,42"
+          Id="Package\MAP File\MAP Flat File Destination"
+          TopLeft="407,513" />
+        <EdgeLayout
+          Id="Package\MAP File.Paths[OLE DB Source Output]"
+          TopLeft="287,319">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="218,194"
+              Start="0,0"
+              End="218,186.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,93" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,93"
+                    Point2="0,97"
+                    Point3="4,97" />
+                  <mssgle:LineSegment
+                    End="214,97" />
+                  <mssgle:CubicBezierSegment
+                    Point1="214,97"
+                    Point2="218,97"
+                    Point3="218,101" />
+                  <mssgle:LineSegment
+                    End="218,186.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\MAP File\OLE DB Source EXEC MAP">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

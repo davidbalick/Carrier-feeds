@@ -1,0 +1,383 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="12/5/2017 2:09:10 PM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="DESKTOP-2LSUOD4"
+  DTS:CreatorName="DESKTOP-2LSUOD4\Joshua"
+  DTS:DTSID="{C235E6A7-9FEF-4344-B5FE-2007FDE123D8}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="TX_ProCareRx"
+  DTS:PackageType="5"
+  DTS:VersionBuild="20"
+  DTS:VersionGUID="{ADA5FF1C-53C8-4903-8D43-095468C18801}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[sFTP ProCareRx]"
+      DTS:CreationName="SSH"
+      DTS:DTSID="{FA8C148C-E2AD-4260-A74D-D0C74E29E680}"
+      DTS:ObjectName="sFTP ProCareRx">
+      <DTS:ObjectData>
+        <ConnectionManager
+          BackendVersion="2"
+          ConnectionString="ServerHost=sftp.procarerx.com;ServerPort=22;ServerUser=wellnet;ServerKeyFile=;ServerTimeout=60;LogFile=;TransferBinary=True;ServerType=Unknown;ServerFingerprint=;RetainSameConnection=False;ProxyType=None;ProxyHost=;ProxyPort=80;ProxyUser=;">
+          <ServerPassword
+            Sensitive="1" xmlns="www.microsoft.com/SqlServer/Dts"
+            Encrypted="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGRUED1F5kEiJ9fwCTwIODwAAAAAIAAAARABUAFMAAAADZgAAwAAAABAAAACHmJactfCaLyps9gmmLU0aAAAAAASAAACgAAAAEAAAANn4CAGEiuxNZhYj7f3z9CkYAAAAh20ate9Rl8vFfzLqt2qq7qRTeWP0yTbOFAAAAJl+WxbvnKyIHR8PPhHiAnfdrV5k</ServerPassword>
+        </ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[Source File to copy]"
+      DTS:CreationName="FILE"
+      DTS:DTSID="{D3831347-0EA7-4776-99A0-D726D70FB609}"
+      DTS:ObjectName="Source File to copy">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::Path_To_SourceFile]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:ConnectionString="temp" />
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{FA7EB54E-9364-4E52-A40F-AC2C4C0A95B2}"
+      DTS:ObjectName="Path_To_ArchiveDirectoryRoot">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">\\192.168.11.10\shared\TransmissionArchive\Outbound\ProCareRx</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{3EF9A762-70A7-40B0-8AC1-DBA55751A0EF}"
+      DTS:ObjectName="Path_To_OutputDirectory">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Temp\SSIS Out\ProCareRx</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{630D092B-5F6D-4AED-9242-DAEBBFA51D4B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Path_To_ArchiveDirectoryRoot]+&quot;\\&quot;+(DT_WSTR, 4 )YEAR( GETDATE() )"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Path_To_ArchiveDirectory">
+      <DTS:VariableValue
+        DTS:DataType="8">\\192.168.11.10\shared\TransmissionArchive\Outbound\ProCareRx\2018</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{A3579338-A6FB-4CA7-9A51-6A0D3472C078}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Path_To_OutputDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Path_To_OutputDirectory">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out\ProCareRx</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7E97BCDF-D671-4662-8957-5C2E071CC401}"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="Path_To_SourceFile">
+      <DTS:VariableValue
+        DTS:DataType="8">temp</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\Execute Package - ProCareRx"
+      DTS:CreationName="SSIS.ExecutePackageTask.3"
+      DTS:Description="Execute Package - ProCareRx"
+      DTS:DTSID="{4E483684-FCEA-45C1-81AD-AE19EBB30ED3}"
+      DTS:ExecutableType="SSIS.ExecutePackageTask.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Execute Package - ProCareRx"
+      DTS:TaskContact="Microsoft Corporation; Microsoft SQL Server; Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <ExecutePackageTask>
+          <UseProjectReference>True</UseProjectReference>
+          <PackageName>ProCareRx.dtsx</PackageName>
+          <ParameterAssignment>
+            <ParameterName>Path_To_OutputDirectory</ParameterName>
+            <BindedVariableOrParameterName>$Package::Path_To_OutputDirectory</BindedVariableOrParameterName>
+          </ParameterAssignment>
+        </ExecutePackageTask>
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Foreach File in Output Directory"
+      DTS:CreationName="STOCK:FOREACHLOOP"
+      DTS:Description="Foreach Loop Container"
+      DTS:DTSID="{135571A6-F376-42EB-A9B5-3AA036A9B64C}"
+      DTS:ExecutableType="STOCK:FOREACHLOOP"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Foreach File in Output Directory">
+      <DTS:ForEachEnumerator
+        DTS:CreationName="DTS.ForEachFileEnumerator.3"
+        DTS:DTSID="{1AC31E5C-6A32-4A91-A69C-03C68EF8B82A}"
+        DTS:ObjectName="{1AC31E5C-6A32-4A91-A69C-03C68EF8B82A}">
+        <DTS:PropertyExpression
+          DTS:Name="Directory">@[User::Path_To_OutputDirectory]</DTS:PropertyExpression>
+        <DTS:ObjectData>
+          <ForEachFileEnumeratorProperties>
+            <FEFEProperty
+              Folder="C:\Temp\SSIS Out\ProCareRx" />
+            <FEFEProperty
+              FileSpec="*.*" />
+            <FEFEProperty
+              FileNameRetrievalType="0" />
+            <FEFEProperty
+              Recurse="0" />
+          </ForEachFileEnumeratorProperties>
+        </DTS:ObjectData>
+      </DTS:ForEachEnumerator>
+      <DTS:Variables />
+      <DTS:Executables>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File in Output Directory\Copy to Archive"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="File System Task"
+          DTS:DTSID="{0AAF8631-EE3E-446F-B8FA-6A2B68F38230}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Copy to Archive"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskSourcePath="{D3831347-0EA7-4776-99A0-D726D70FB609}"
+              TaskDestinationPath="User::Path_To_ArchiveDirectory"
+              TaskIsDestinationVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File in Output Directory\Delete local copy"
+          DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:Description="File System Task"
+          DTS:DTSID="{43810D8A-3BF7-4B99-A95F-E5DB1DF9AAA3}"
+          DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.FileSystemTask.FileSystemTask, Microsoft.SqlServer.FileSystemTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="Delete local copy"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileSystemData
+              TaskOperationType="DeleteFile"
+              TaskSourcePath="User::Path_To_SourceFile"
+              TaskIsSourceVariable="True" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+        <DTS:Executable
+          DTS:refId="Package\Foreach File in Output Directory\sFTP Copy to Carrier"
+          DTS:CreationName="CozyRoc.SqlServer.SSIS.FileTransferTask, CozyRoc.SSISPlus.2012, Version=1.0.0.0, Culture=neutral, PublicKeyToken=16cf490bb80c34ea"
+          DTS:Description="File Transfer Task"
+          DTS:DTSID="{850FE683-766A-42DA-B638-5C31D7147255}"
+          DTS:ExecutableType="CozyRoc.SqlServer.SSIS.FileTransferTask, CozyRoc.SSISPlus.2012, Version=1.0.0.0, Culture=neutral, PublicKeyToken=16cf490bb80c34ea"
+          DTS:LocaleID="-1"
+          DTS:ObjectName="sFTP Copy to Carrier"
+          DTS:ThreadHint="0">
+          <DTS:Variables />
+          <DTS:ObjectData>
+            <FileTransferData
+              Connection="{FA8C148C-E2AD-4260-A74D-D0C74E29E680}"
+              StopOnFailure="True"
+              Action="SendFiles"
+              IsLocalVariable="False"
+              Local="{D3831347-0EA7-4776-99A0-D726D70FB609}"
+              IsRemoteVariable="False"
+              Remote="/"
+              OverwriteExisting="False"
+              Result=""
+              ExtendedRemoteFileInfo="True"
+              IsRemoteWildcard="True"
+              NoFilesFail="True"
+              IncludeSubfolders="False"
+              IsFilterVariable="False"
+              Filter=""
+              RemotePathSeparator="/" />
+          </DTS:ObjectData>
+        </DTS:Executable>
+      </DTS:Executables>
+      <DTS:PrecedenceConstraints>
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach File in Output Directory.PrecedenceConstraints[Constraint]"
+          DTS:CreationName=""
+          DTS:DTSID="{B066CEEC-6B1B-4943-A129-D38283C407AA}"
+          DTS:From="Package\Foreach File in Output Directory\Copy to Archive"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint"
+          DTS:To="Package\Foreach File in Output Directory\sFTP Copy to Carrier" />
+        <DTS:PrecedenceConstraint
+          DTS:refId="Package\Foreach File in Output Directory.PrecedenceConstraints[Constraint 1]"
+          DTS:CreationName=""
+          DTS:DTSID="{24C6DFE5-4E26-43CB-A119-703A90009A23}"
+          DTS:From="Package\Foreach File in Output Directory\sFTP Copy to Carrier"
+          DTS:LogicalAnd="True"
+          DTS:ObjectName="Constraint 1"
+          DTS:To="Package\Foreach File in Output Directory\Delete local copy" />
+      </DTS:PrecedenceConstraints>
+      <DTS:ForEachVariableMappings>
+        <DTS:ForEachVariableMapping
+          DTS:CreationName=""
+          DTS:DTSID="{E9CF0648-C287-4BE7-AEC3-7496695D6856}"
+          DTS:ObjectName="{E9CF0648-C287-4BE7-AEC3-7496695D6856}"
+          DTS:ValueIndex="0"
+          DTS:VariableName="User::Path_To_SourceFile" />
+      </DTS:ForEachVariableMappings>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{C0841458-A00C-4752-A56F-87212BD16D2D}"
+      DTS:From="Package\Execute Package - ProCareRx"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Foreach File in Output Directory" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="8" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="218,42"
+          Id="Package\Execute Package - ProCareRx"
+          TopLeft="261,209" />
+        <NodeLayout
+          Size="153,42"
+          Id="Package\Foreach File in Output Directory\Copy to Archive"
+          TopLeft="64,34" />
+        <NodeLayout
+          Size="159,42"
+          Id="Package\Foreach File in Output Directory\Delete local copy"
+          TopLeft="55,231" />
+        <NodeLayout
+          Size="176,42"
+          Id="Package\Foreach File in Output Directory\sFTP Copy to Carrier"
+          TopLeft="65,126" />
+        <EdgeLayout
+          Id="Package\Foreach File in Output Directory.PrecedenceConstraints[Constraint]"
+          TopLeft="140.5,76">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="12.5,50"
+              Start="0,0"
+              End="12.5,42.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,21" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,21"
+                    Point2="0,25"
+                    Point3="4,25" />
+                  <mssgle:LineSegment
+                    End="8.5,25" />
+                  <mssgle:CubicBezierSegment
+                    Point1="8.5,25"
+                    Point2="12.5,25"
+                    Point3="12.5,29" />
+                  <mssgle:LineSegment
+                    End="12.5,42.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <EdgeLayout
+          Id="Package\Foreach File in Output Directory.PrecedenceConstraints[Constraint 1]"
+          TopLeft="153,168">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="-18.5,63"
+              Start="0,0"
+              End="-18.5,55.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,27.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,27.5"
+                    Point2="0,31.5"
+                    Point3="-4,31.5" />
+                  <mssgle:LineSegment
+                    End="-14.5,31.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="-14.5,31.5"
+                    Point2="-18.5,31.5"
+                    Point3="-18.5,35.5" />
+                  <mssgle:LineSegment
+                    End="-18.5,55.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+        <ContainerLayout
+          HeaderHeight="43"
+          IsExpanded="True"
+          PanelSize="326,329"
+          Size="326,372"
+          Id="Package\Foreach File in Output Directory"
+          TopLeft="203,332" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="368,251">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="0,81"
+              Start="0,0"
+              End="0,73.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,73.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

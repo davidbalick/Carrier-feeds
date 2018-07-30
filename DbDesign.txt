@@ -1,0 +1,39 @@
+
+Kinds:
+	ParameterKind (Vendor, FileLocation, FileFormat, Email)
+		Name
+	FunctionKind (ExecSP, CreateFileFromSp, SftpAndArchive, Notify)
+		Name
+	FunctionKindParameterKind
+		Name
+		ParameterKindId
+		Sequence
+	Status
+		Name
+	
+Setups:
+	ParameterSetup
+		Name
+		ParameterKindId
+		ParameterValue
+	JobSetup
+		Name
+	JobParameterSetup
+		JobSetupId
+		ParameterSetupId
+	JobFunctionSetup
+		JobSetupId
+		Sequence
+
+Events:
+	JobEvent
+		JobSetupId
+		RequestedBy
+		RequestedWhen
+		RunWhen
+		Status
+	Message
+		JobEventId
+		IsFatal bit -- if 1, stops process, otherwise informational/warning
+		Context varchar(1000) - a way to id a record if needed
+		Message varchar(1000)

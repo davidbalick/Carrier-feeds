@@ -1,0 +1,42 @@
+AMPS:
+	AltId Maintainance: 
+		Connection: HSAESQL2VM-1 HSNavanex Joshua Lynn
+		EXEC [enroll].[NVX_AltID_Maintenance]
+	AMPS File:
+EXECUTE [enroll].[AMPS_ElgibilityFile]
+WITH RESULT SETS (
+	 (
+		  [Member ID]		VARCHAR(20)
+		, [Member Type]		VARCHAR(1)
+		, [Primary Member ID]		VARCHAR(20)
+		, [First Name]		VARCHAR(50)
+		, [Last Name]		VARCHAR(50)
+		, [Address Line 1]		VARCHAR(50)
+		, [Address Line 2]		VARCHAR(50)
+		, [City]		VARCHAR(50)
+		, [State]		VARCHAR(2)
+		, [Zip Code]		VARCHAR(5)
+		, [Phone Number]		VARCHAR(15)
+		, [Fax Number]		VARCHAR(15)
+		, [Email Address]		VARCHAR(100)
+		, [Gender]		VARCHAR(1)
+		, [Effective Date]		VARCHAR(10)
+		, [Termination Date]		VARCHAR(10)
+		, [Birthdate]		VARCHAR(10)
+		, [Client Code]		VARCHAR(20)
+		, [Group Number]		VARCHAR(20)
+		, [Sub-Group Number]		VARCHAR(20)
+		, [Plan Code]		VARCHAR(20)
+		--below fields are not in file
+		, [EmpSortOrder] INT NOT NULL
+		, [FamilySortOrder] INT NOT NULL
+		, [ClientPrincipalId] UNIQUEIDENTIFIER NOT NULL
+		, [EEPrincipalId] UNIQUEIDENTIFIER NOT NULL
+		, [DepPrincipalID] UNIQUEIDENTIFIER NULL
+		)
+)	
+	Copy to archive location
+	SFTP to carrier
+C:\Temp\SSIS Out\WELLNET_AMPS_20180725.txt, delimited, column delimiter |,
+
+sftp to dir /eligibility

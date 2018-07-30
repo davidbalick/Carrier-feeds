@@ -1,0 +1,585 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2017 10:45:29 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="JOSHUA-P4600"
+  DTS:CreatorName="JOSHUA-P4600\Joshua"
+  DTS:DTSID="{679EB121-EC93-4DFC-9D85-0728F856AA1B}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Navitus"
+  DTS:PackageType="5"
+  DTS:VersionBuild="34"
+  DTS:VersionGUID="{63D91ED2-E012-46BE-83E2-9CAFAE73AEEA}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[NavitusFileOut]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{6DDC21B5-8B08-4B63-9D4D-0DF858EFCD60}"
+      DTS:ObjectName="NavitusFileOut">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::OutputFileWithPath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\SSIS Out\ONVWEL_WellN_20180719.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="4000"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="FileOutputRow"
+              DTS:DTSID="{71E73648-B816-49FD-9FFF-7125FA5E1CA6}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="3"
+      DTS:DTSID="{AF817DB5-9D77-4936-B21B-D0D534FFBF8C}"
+      DTS:ObjectName="OffSetFileDateDays">
+      <DTS:Property
+        DTS:DataType="3"
+        DTS:Name="ParameterValue">1</DTS:Property>
+    </DTS:PackageParameter>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{E346120B-31C9-41EE-8F0B-4D589EF0A9AB}"
+      DTS:ObjectName="Path_To_OutputDirectory">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Temp\SSIS Out</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{7B9319DF-68F0-4EAB-9304-BEE558A23F81}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;ONVWEL_WellN_&quot;+ (DT_WSTR,4)DatePart(&quot;yyyy&quot;, DATEADD( &quot;dd&quot;, @[$Package::OffSetFileDateDays],  GetDate() ) ) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;mm&quot;, DATEADD( &quot;dd&quot;, @[$Package::OffSetFileDateDays],  GetDate() ) ), 2) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;dd&quot;, DATEADD( &quot;dd&quot;, @[$Package::OffSetFileDateDays],  GetDate() ) ), 2)&#xA;+ &quot;.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">ONVWEL_WellN_20180719.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{00A18817-8097-43AE-9DA2-A533067DF8E4}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Path_To_OutputDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FC6C7F13-1601-4873-AFAD-C6ECB610F6CA}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FilePath]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputFileWithPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out\ONVWEL_WellN_20180719.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{FEFFCB6C-DCA5-418B-8FBC-DE79F3104691}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputRowData">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{9DB0CB32-5A5E-42DA-B910-A7692C153A37}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RetVal">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AltID Maintenance"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{6080FF1B-FDBA-4AC7-A452-428F7F20E3C3}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AltID Maintenance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03D2AB9C-4512-41BA-8F27-204A5001CF29}"
+          SQLTask:SqlStatementSource="EXEC [enroll].[NVX_AltID_Maintenance]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Navitus File"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{182185FF-915B-46B1-A9B5-B102589C2D39}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Navitus File">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Navitus File\Flat File Destination"
+              componentClassID="DTSAdapter.FlatFileDestination.3"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Navitus File\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[NavitusFileOut]"
+                  connectionManagerRefId="Package.ConnectionManagers[NavitusFileOut]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Navitus File\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Navitus File\Flat File Destination.Inputs[Flat File Destination Input].Columns[FileOutputRow]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="4000"
+                      cachedName="FileOutputRow"
+                      externalMetadataColumnId="Package\Navitus File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FileOutputRow]"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileOutputRow]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Navitus File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[FileOutputRow]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="FileOutputRow" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Navitus File\OLE DB Source"
+              componentClassID="DTSAdapter.OLEDBSource.3"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [enroll].[Navitus_EligibilityFile]
+WITH RESULT SETS (
+	(
+	  [FileOutputRow]	VARCHAR(4000) NOT NULL
+	, [ORGANIZATION CODE]	CHAR(10)
+	, [CARRIER]			CHAR(10)
+	, [GROUP]			CHAR(15)
+	, [EmpSortOrder]	INT	
+	, [FamilySortOrder] INT
+	)
+)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Navitus File\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{03D2AB9C-4512-41BA-8F27-204A5001CF29}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HSAESQL2VM-1 HSNavanex Joshua Lynn]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileOutputRow]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileOutputRow]"
+                      length="4000"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[FileOutputRow]"
+                      name="FileOutputRow"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORGANIZATION CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORGANIZATION CODE]"
+                      length="10"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[ORGANIZATION CODE]"
+                      name="ORGANIZATION CODE"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[CARRIER]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CARRIER]"
+                      length="10"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[CARRIER]"
+                      name="CARRIER"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GROUP]"
+                      length="15"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[GROUP]"
+                      name="GROUP"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmpSortOrder]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmpSortOrder]"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmpSortOrder]"
+                      name="EmpSortOrder"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[FamilySortOrder]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FamilySortOrder]"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].Columns[FamilySortOrder]"
+                      name="FamilySortOrder"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FileOutputRow]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      name="FileOutputRow" />
+                    <externalMetadataColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ORGANIZATION CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="ORGANIZATION CODE" />
+                    <externalMetadataColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[CARRIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="CARRIER" />
+                    <externalMetadataColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="GROUP" />
+                    <externalMetadataColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmpSortOrder]"
+                      dataType="i4"
+                      name="EmpSortOrder" />
+                    <externalMetadataColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FamilySortOrder]"
+                      dataType="i4"
+                      name="FamilySortOrder" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileOutputRow]"
+                      codePage="1252"
+                      dataType="str"
+                      length="4000"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FileOutputRow]"
+                      name="FileOutputRow" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORGANIZATION CODE]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ORGANIZATION CODE]"
+                      name="ORGANIZATION CODE" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CARRIER]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[CARRIER]"
+                      name="CARRIER" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GROUP]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GROUP]"
+                      name="GROUP" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmpSortOrder]"
+                      dataType="i4"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmpSortOrder]"
+                      name="EmpSortOrder" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FamilySortOrder]"
+                      dataType="i4"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FamilySortOrder]"
+                      name="FamilySortOrder" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Navitus File.Paths[OLE DB Source Output]"
+              endId="Package\Navitus File\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Navitus File\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{4FE1EBE9-8D85-4576-B5AC-5664560CF07A}"
+      DTS:From="Package\AltID Maintenance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Navitus File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\AltID Maintenance"
+          TopLeft="150,166" />
+        <NodeLayout
+          Size="144,42"
+          Id="Package\Navitus File"
+          TopLeft="174.5,309.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="232.5,208">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="14,101.5"
+              Start="0,0"
+              End="14,94">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,46.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,46.75"
+                    Point2="0,50.75"
+                    Point3="4,50.75" />
+                  <mssgle:LineSegment
+                    End="10,50.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="10,50.75"
+                    Point2="14,50.75"
+                    Point3="14,54.75" />
+                  <mssgle:LineSegment
+                    End="14,94" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Navitus File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Navitus File\OLE DB Source"
+          TopLeft="192,276" />
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Navitus File\Flat File Destination"
+          TopLeft="344,440" />
+        <EdgeLayout
+          Id="Package\Navitus File.Paths[OLE DB Source Output]"
+          TopLeft="267,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="163,122"
+              Start="0,0"
+              End="163,114.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,57" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,57"
+                    Point2="0,61"
+                    Point3="4,61" />
+                  <mssgle:LineSegment
+                    End="159,61" />
+                  <mssgle:CubicBezierSegment
+                    Point1="159,61"
+                    Point2="163,61"
+                    Point3="163,65" />
+                  <mssgle:LineSegment
+                    End="163,114.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Navitus File\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

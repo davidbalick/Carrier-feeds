@@ -1,0 +1,1519 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2017 10:45:29 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="JOSHUA-P4600"
+  DTS:CreatorName="JOSHUA-P4600\Joshua"
+  DTS:DTSID="{730E8126-8E45-48BE-A947-66582B40E2B7}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="AMPS"
+  DTS:PackageType="5"
+  DTS:VersionBuild="46"
+  DTS:VersionGUID="{A397E2D4-E981-4006-81AF-52EDE83F2F42}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[AMPS Flat File Connection Manager]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{D17B9C9D-7754-4E48-8B6E-A508D10867D2}"
+      DTS:ObjectName="AMPS Flat File Connection Manager">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::OutputFileWithPath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\SSIS Out\WELLNET_AMPS_20180718.txt">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Member ID"
+              DTS:DTSID="{431B9171-FA02-4C14-8DCE-92BD96856F95}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Member Type"
+              DTS:DTSID="{D2F830FA-7E59-4F15-A398-756FAD321AB0}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Primary Member ID"
+              DTS:DTSID="{57EA6D37-669B-42CD-B7FE-4ABF1E863390}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="First Name"
+              DTS:DTSID="{F2A731A8-FAD6-412A-9630-2869C30389B5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Last Name"
+              DTS:DTSID="{C516C068-F49C-451D-89B3-84FE40F3ACE8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address Line 1"
+              DTS:DTSID="{F4A18CC4-A80D-40DA-A287-ACD627493E77}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Address Line 2"
+              DTS:DTSID="{150A0FCE-6968-4DFE-99DC-3D5504D0A6DB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="City"
+              DTS:DTSID="{E62D373D-99A5-4420-ADD1-496C08C29E7B}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="State"
+              DTS:DTSID="{7A05BA1D-4C6D-4B37-A79F-B761BDD9B8D7}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="5"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Zip Code"
+              DTS:DTSID="{71F89129-F522-47B4-BBC7-73E4FB9F93FB}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Phone Number"
+              DTS:DTSID="{62E44902-28A4-4FBD-9264-DE9752E46B26}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="15"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Fax Number"
+              DTS:DTSID="{977105D6-58B8-4BEA-A67D-000B843445E5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Email Address"
+              DTS:DTSID="{60F4BEC6-EB84-495E-AB89-3FF89E9C07E2}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Gender"
+              DTS:DTSID="{664B55B3-5EEC-4560-9934-0E57758C860F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Effective Date"
+              DTS:DTSID="{BBA5C924-D2E8-4647-B492-B779689DF09D}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Termination Date"
+              DTS:DTSID="{F306FFB1-4D1E-4650-836E-23CB4CE003E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Birthdate"
+              DTS:DTSID="{5CA3E61B-989D-40E4-99EB-78BF94AE0069}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Client Code"
+              DTS:DTSID="{014A4B62-7E08-43F9-ABE8-7405A9593098}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Group Number"
+              DTS:DTSID="{7AA1F115-FE4E-4C2D-AD5F-B4DA0964103A}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x007C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Sub-Group Number"
+              DTS:DTSID="{13967902-9C6B-4CA9-8CCF-D0901BDB4E58}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Plan Code"
+              DTS:DTSID="{0822B5B5-8233-4D18-B4A7-E0F868585A00}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{785CBFB4-C3EE-4E87-A490-D8BC01344DE4}"
+      DTS:ObjectName="Path_To_OutputDirectory">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Temp\SSIS Out</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{ACA2475B-0A8E-4603-9D32-53F8A506048F}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;WELLNET_AMPS_&quot; + (DT_WSTR,4)DatePart(&quot;yyyy&quot;, GetDate()) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;mm&quot;, GetDate()), 2) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;dd&quot;, GetDate()), 2)&#xA;+ &quot;.txt&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">WELLNET_AMPS_20180718.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{E23BBCAE-F604-40DB-A0BD-D0A214D668BF}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Path_To_OutputDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{19223874-E1E9-4C18-BBBA-6441E89967F1}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FilePath]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputFileWithPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out\WELLNET_AMPS_20180718.txt</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{8FEFD8F3-71AB-4532-BFE7-FDF2A170D674}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputRowData">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{189B6D77-565D-47B8-8725-E2E2A045DFE7}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RetVal">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AltID Maintenance"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{F726B469-8F28-4978-BAFF-E2CE3FE97F18}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AltID Maintenance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03D2AB9C-4512-41BA-8F27-204A5001CF29}"
+          SQLTask:SqlStatementSource="EXEC [enroll].[NVX_AltID_Maintenance]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\AMPS File"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{5B42CB4E-5C8D-4053-B3BC-9201DDC8195F}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AMPS File">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\AMPS File\AMPS Flat File Destination"
+              componentClassID="DTSAdapter.FlatFileDestination.3"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="AMPS Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\AMPS File\AMPS Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[AMPS Flat File Connection Manager]"
+                  connectionManagerRefId="Package.ConnectionManagers[AMPS Flat File Connection Manager]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Member ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Member ID"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Member ID]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Member ID]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Member Type]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Member Type"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Member Type]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Member Type]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Primary Member ID]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Primary Member ID"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Primary Member ID]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Primary Member ID]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[First Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="First Name"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[First Name]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[First Name]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Last Name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Last Name"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Last Name]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last Name]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Address Line 1]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Address Line 1"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 1]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address Line 1]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Address Line 2]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="Address Line 2"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 2]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address Line 2]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[City]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="City"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[State]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="State"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Zip Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="5"
+                      cachedName="Zip Code"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Zip Code]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Zip Code]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Phone Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Phone Number"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Phone Number]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone Number]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Fax Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="15"
+                      cachedName="Fax Number"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Fax Number]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fax Number]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Email Address]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="Email Address"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email Address]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email Address]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="Gender"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Effective Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Effective Date"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Effective Date]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Effective Date]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Termination Date]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Termination Date"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Termination Date]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Termination Date]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Birthdate]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Birthdate"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Birthdate]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birthdate]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Client Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Client Code"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Client Code]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Client Code]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Group Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Group Number"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Group Number]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Group Number]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Sub-Group Number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Sub-Group Number"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sub-Group Number]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sub-Group Number]" />
+                    <inputColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].Columns[Plan Code]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Plan Code"
+                      externalMetadataColumnId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Plan Code]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Plan Code]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Member ID" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Member Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Member Type" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Primary Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Primary Member ID" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="First Name" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Address Line 1" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Address Line 2" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Zip Code" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Phone Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Phone Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Fax Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Fax Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Email Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Email Address" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Effective Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Effective Date" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Termination Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Termination Date" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Birthdate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Client Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Client Code" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Group Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Sub-Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Sub-Group Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Plan Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Plan Code" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\AMPS File\OLE DB Source"
+              componentClassID="DTSAdapter.OLEDBSource.3"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [enroll].[AMPS_ElgibilityFile]
+WITH RESULT SETS (
+	 (
+		  [Member ID]		VARCHAR(20)
+		, [Member Type]		VARCHAR(1)
+		, [Primary Member ID]		VARCHAR(20)
+		, [First Name]		VARCHAR(50)
+		, [Last Name]		VARCHAR(50)
+		, [Address Line 1]		VARCHAR(50)
+		, [Address Line 2]		VARCHAR(50)
+		, [City]		VARCHAR(50)
+		, [State]		VARCHAR(2)
+		, [Zip Code]		VARCHAR(5)
+		, [Phone Number]		VARCHAR(15)
+		, [Fax Number]		VARCHAR(15)
+		, [Email Address]		VARCHAR(100)
+		, [Gender]		VARCHAR(1)
+		, [Effective Date]		VARCHAR(10)
+		, [Termination Date]		VARCHAR(10)
+		, [Birthdate]		VARCHAR(10)
+		, [Client Code]		VARCHAR(20)
+		, [Group Number]		VARCHAR(20)
+		, [Sub-Group Number]		VARCHAR(20)
+		, [Plan Code]		VARCHAR(20)
+
+		, [EmpSortOrder] INT NOT NULL
+		, [FamilySortOrder] INT NOT NULL
+		, [ClientPrincipalId] UNIQUEIDENTIFIER NOT NULL
+		, [EEPrincipalId] UNIQUEIDENTIFIER NOT NULL
+		, [DepPrincipalID] UNIQUEIDENTIFIER NULL
+		)
+)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\AMPS File\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{03D2AB9C-4512-41BA-8F27-204A5001CF29}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HSAESQL2VM-1 HSNavanex Joshua Lynn]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Member ID]"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Member ID]"
+                      name="Member ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Member Type]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Member Type]"
+                      length="1"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Member Type]"
+                      name="Member Type"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Primary Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Primary Member ID]"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Primary Member ID]"
+                      name="Primary Member ID"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[First Name]"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[First Name]"
+                      name="First Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Last Name]"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Last Name]"
+                      name="Last Name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address Line 1]"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address Line 1]"
+                      name="Address Line 1"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address Line 2]"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Address Line 2]"
+                      name="Address Line 2"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[City]"
+                      name="City"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      length="2"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[State]"
+                      name="State"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Zip Code]"
+                      length="5"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Zip Code]"
+                      name="Zip Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phone Number]"
+                      length="15"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Phone Number]"
+                      name="Phone Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fax Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fax Number]"
+                      length="15"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Fax Number]"
+                      name="Fax Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email Address]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Email Address]"
+                      length="100"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Email Address]"
+                      name="Email Address"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      length="1"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Gender]"
+                      name="Gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Effective Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Effective Date]"
+                      length="10"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Effective Date]"
+                      name="Effective Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Termination Date]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Termination Date]"
+                      length="10"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Termination Date]"
+                      name="Termination Date"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birthdate]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Birthdate]"
+                      length="10"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Birthdate]"
+                      name="Birthdate"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Client Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Client Code]"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Client Code]"
+                      name="Client Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Group Number]"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Group Number]"
+                      name="Group Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sub-Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sub-Group Number]"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Sub-Group Number]"
+                      name="Sub-Group Number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Plan Code]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Plan Code]"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Plan Code]"
+                      name="Plan Code"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmpSortOrder]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmpSortOrder]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[EmpSortOrder]"
+                      name="EmpSortOrder"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[FamilySortOrder]"
+                      dataType="i4"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FamilySortOrder]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[FamilySortOrder]"
+                      name="FamilySortOrder"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientPrincipalId]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClientPrincipalId]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[ClientPrincipalId]"
+                      name="ClientPrincipalId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[EEPrincipalId]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EEPrincipalId]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[EEPrincipalId]"
+                      name="EEPrincipalId"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[DepPrincipalID]"
+                      dataType="guid"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DepPrincipalID]"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].Columns[DepPrincipalID]"
+                      name="DepPrincipalID"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Member ID" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Member Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Member Type" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Primary Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Primary Member ID" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="First Name" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Last Name" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Address Line 1" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="Address Line 2" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="City" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="State" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      name="Zip Code" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Phone Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Phone Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Fax Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      name="Fax Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Email Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="Email Address" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="Gender" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Effective Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Effective Date" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Termination Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Termination Date" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Birthdate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Birthdate" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Client Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Client Code" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Group Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Sub-Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Sub-Group Number" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Plan Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Plan Code" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EmpSortOrder]"
+                      dataType="i4"
+                      name="EmpSortOrder" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[FamilySortOrder]"
+                      dataType="i4"
+                      name="FamilySortOrder" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[ClientPrincipalId]"
+                      dataType="guid"
+                      name="ClientPrincipalId" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[EEPrincipalId]"
+                      dataType="guid"
+                      name="EEPrincipalId" />
+                    <externalMetadataColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[DepPrincipalID]"
+                      dataType="guid"
+                      name="DepPrincipalID" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Member ID]"
+                      name="Member ID" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Member Type]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Member Type]"
+                      name="Member Type" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Primary Member ID]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Primary Member ID]"
+                      name="Primary Member ID" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[First Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[First Name]"
+                      name="First Name" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Last Name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Last Name]"
+                      name="Last Name" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address Line 1]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address Line 1]"
+                      name="Address Line 1" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address Line 2]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Address Line 2]"
+                      name="Address Line 2" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[City]"
+                      name="City" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[State]"
+                      name="State" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Zip Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="5"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Zip Code]"
+                      name="Zip Code" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phone Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Phone Number]"
+                      name="Phone Number" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fax Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="15"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Fax Number]"
+                      name="Fax Number" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Email Address]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Email Address]"
+                      name="Email Address" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Gender]"
+                      name="Gender" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Effective Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Effective Date]"
+                      name="Effective Date" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Termination Date]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Termination Date]"
+                      name="Termination Date" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Birthdate]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Birthdate]"
+                      name="Birthdate" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Client Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Client Code]"
+                      name="Client Code" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Group Number]"
+                      name="Group Number" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sub-Group Number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Sub-Group Number]"
+                      name="Sub-Group Number" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Plan Code]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Plan Code]"
+                      name="Plan Code" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmpSortOrder]"
+                      dataType="i4"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EmpSortOrder]"
+                      name="EmpSortOrder" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FamilySortOrder]"
+                      dataType="i4"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[FamilySortOrder]"
+                      name="FamilySortOrder" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClientPrincipalId]"
+                      dataType="guid"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ClientPrincipalId]"
+                      name="ClientPrincipalId" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EEPrincipalId]"
+                      dataType="guid"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[EEPrincipalId]"
+                      name="EEPrincipalId" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DepPrincipalID]"
+                      dataType="guid"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[DepPrincipalID]"
+                      name="DepPrincipalID" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\AMPS File.Paths[OLE DB Source Output]"
+              endId="Package\AMPS File\AMPS Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\AMPS File\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{EE80A9D4-8A03-456D-9A20-E9366EB745B6}"
+      DTS:From="Package\AltID Maintenance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\AMPS File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\AltID Maintenance"
+          TopLeft="122,172" />
+        <NodeLayout
+          Size="125,42"
+          Id="Package\AMPS File"
+          TopLeft="197.5,271.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="204.5,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="55.5,57.5"
+              Start="0,0"
+              End="55.5,50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.75"
+                    Point2="0,28.75"
+                    Point3="4,28.75" />
+                  <mssgle:LineSegment
+                    End="51.5,28.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="51.5,28.75"
+                    Point2="55.5,28.75"
+                    Point3="55.5,32.75" />
+                  <mssgle:LineSegment
+                    End="55.5,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\AMPS File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:mssgm="clr-namespace:Microsoft.SqlServer.Graph.Model;assembly=Microsoft.SqlServer.Graph">
+        <NodeLayout
+          Size="202,42"
+          Id="Package\AMPS File\AMPS Flat File Destination"
+          TopLeft="363,531" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\AMPS File\OLE DB Source"
+          TopLeft="192,276" />
+        <EdgeLayout
+          Id="Package\AMPS File.Paths[OLE DB Source Output]"
+          TopLeft="267,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="197,213"
+              Start="0,0"
+              End="197,205.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,102.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,102.5"
+                    Point2="0,106.5"
+                    Point3="4,106.5" />
+                  <mssgle:LineSegment
+                    End="193,106.5" />
+                  <mssgle:CubicBezierSegment
+                    Point1="193,106.5"
+                    Point2="197,106.5"
+                    Point3="197,110.5" />
+                  <mssgle:LineSegment
+                    End="197,205.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <mssgm:EdgeLabel
+              BoundingBox="0,0,0,0"
+              RelativePosition="Any" />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\AMPS File\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

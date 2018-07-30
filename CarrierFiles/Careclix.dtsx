@@ -1,0 +1,1422 @@
+﻿<?xml version="1.0"?>
+<DTS:Executable xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:refId="Package"
+  DTS:CreationDate="1/10/2017 10:45:29 AM"
+  DTS:CreationName="SSIS.Package.3"
+  DTS:CreatorComputerName="JOSHUA-P4600"
+  DTS:CreatorName="JOSHUA-P4600\Joshua"
+  DTS:DTSID="{C88EEC7B-4A82-4083-A2F8-8D332AAF8233}"
+  DTS:ExecutableType="SSIS.Package.3"
+  DTS:LastModifiedProductVersion="14.0.3026.27"
+  DTS:LocaleID="1033"
+  DTS:ObjectName="Careclix"
+  DTS:PackageType="5"
+  DTS:VersionBuild="43"
+  DTS:VersionGUID="{F3EF11CA-18C4-4A25-AC29-BE715B900744}">
+  <DTS:Property
+    DTS:Name="PackageFormatVersion">6</DTS:Property>
+  <DTS:ConnectionManagers>
+    <DTS:ConnectionManager
+      DTS:refId="Package.ConnectionManagers[CareClix]"
+      DTS:CreationName="FLATFILE"
+      DTS:DTSID="{67F1A5D1-BCE0-43F0-BE66-115727C71865}"
+      DTS:ObjectName="CareClix">
+      <DTS:PropertyExpression
+        DTS:Name="ConnectionString">@[User::OutputFileWithPath]</DTS:PropertyExpression>
+      <DTS:ObjectData>
+        <DTS:ConnectionManager
+          DTS:Format="Delimited"
+          DTS:LocaleID="1033"
+          DTS:HeaderRowDelimiter="_x000D__x000A_"
+          DTS:ColumnNamesInFirstDataRow="True"
+          DTS:RowDelimiter=""
+          DTS:TextQualifier="_x003C_none_x003E_"
+          DTS:CodePage="1252"
+          DTS:ConnectionString="C:\Temp\SSIS Out\WELLN_Careclix_20180718.csv">
+          <DTS:FlatFileColumns>
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="GroupName"
+              DTS:DTSID="{17FD04C4-8420-4CA9-89E7-82C611F19161}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Relationship"
+              DTS:DTSID="{0D02E4F0-E68E-47DF-AAED-5182F32AD616}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="20"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Enrollment_Status"
+              DTS:DTSID="{B9EB7DA1-4C1D-4343-A338-82F4D56BB771}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="username"
+              DTS:DTSID="{FBF7E126-7664-4856-AD82-811B1D71F3BE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="first_name"
+              DTS:DTSID="{9FC698CF-90A3-433D-9A38-C919AC11B8C5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="last_name"
+              DTS:DTSID="{C058D34B-1B83-4623-85DC-A213D7154102}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="100"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="email"
+              DTS:DTSID="{1CD5B140-42E0-44E9-BADD-0EE2E1732921}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="1"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="gender"
+              DTS:DTSID="{23D3EA15-A60B-498B-A020-F67C11F5E4B1}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="phone_number"
+              DTS:DTSID="{D53561E7-6913-4298-AB2D-16BE12ABA411}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="alternate_number"
+              DTS:DTSID="{371FDFA9-26DE-4E69-810E-82A25D5F9677}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="date_of_birth"
+              DTS:DTSID="{18EC268D-B45B-422A-B28F-0A4D816D08B9}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="clinic"
+              DTS:DTSID="{C3418160-C0EA-4C8E-ACD4-37B469C4BEF5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="fax_number"
+              DTS:DTSID="{8F0B51CE-24E6-434D-BBC9-8322FEF610CE}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="50"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="language"
+              DTS:DTSID="{3FD7D6A4-87AA-4758-988B-B52DC5918F5E}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="70"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="street"
+              DTS:DTSID="{8181AEB7-D458-4507-8758-FF3A247C01E8}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="country"
+              DTS:DTSID="{D917D33B-1014-40F7-8074-65CF75B19784}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="2"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="state"
+              DTS:DTSID="{B2608402-748D-4941-B9D5-454D8DFDCC00}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="30"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="city"
+              DTS:DTSID="{C2F7B540-231A-4D95-A76D-75A64AA31FB5}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="zipcode"
+              DTS:DTSID="{F6BCE611-8B24-47E3-B0D6-1718789C963F}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x002C_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Active"
+              DTS:DTSID="{5D0051E3-2EB2-4D57-9744-DADF10F8CF0C}"
+              DTS:CreationName="" />
+            <DTS:FlatFileColumn
+              DTS:ColumnType="Delimited"
+              DTS:ColumnDelimiter="_x000D__x000A_"
+              DTS:MaximumWidth="10"
+              DTS:DataType="129"
+              DTS:TextQualified="True"
+              DTS:ObjectName="Terminated"
+              DTS:DTSID="{93FF2E0A-3FD6-487E-B6A2-1674C5186AC1}"
+              DTS:CreationName="" />
+          </DTS:FlatFileColumns>
+        </DTS:ConnectionManager>
+      </DTS:ObjectData>
+    </DTS:ConnectionManager>
+  </DTS:ConnectionManagers>
+  <DTS:PackageParameters>
+    <DTS:PackageParameter
+      DTS:CreationName=""
+      DTS:DataType="8"
+      DTS:DTSID="{3A088D6B-70AE-428A-83BE-B13BD4E69839}"
+      DTS:ObjectName="Path_To_OutputDirectory">
+      <DTS:Property
+        DTS:DataType="8"
+        DTS:Name="ParameterValue">C:\Temp\SSIS Out</DTS:Property>
+    </DTS:PackageParameter>
+  </DTS:PackageParameters>
+  <DTS:Variables>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{EF7B1969-3F6C-43F3-AD18-CCA9ACD76E2B}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="&quot;WELLN_Careclix_&quot; + (DT_WSTR,4)DatePart(&quot;yyyy&quot;, GetDate()) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;mm&quot;, GetDate()), 2) &#xA;+ RIGHT(&quot;0&quot; + (DT_WSTR,2)DatePart(&quot;dd&quot;, GetDate()), 2)&#xA;+ &quot;.csv&quot;"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FileName">
+      <DTS:VariableValue
+        DTS:DataType="8">WELLN_Careclix_20180718.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{C959E179-0657-4449-9E78-C0C34F0739F9}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[$Package::Path_To_OutputDirectory]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="FilePath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{DACBFF58-C634-42E1-A12B-D71E4301074D}"
+      DTS:EvaluateAsExpression="True"
+      DTS:Expression="@[User::FilePath]+&quot;\\&quot;+ @[User::FileName]"
+      DTS:IncludeInDebugDump="2345"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputFileWithPath">
+      <DTS:VariableValue
+        DTS:DataType="8">C:\Temp\SSIS Out\WELLN_Careclix_20180718.csv</DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{F569BB0F-DDF1-4E50-8443-4EF5CA60104E}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="OutputRowData">
+      <DTS:VariableValue
+        DTS:DataSubType="ManagedSerializable"
+        DTS:DataType="13">
+        <SOAP-ENV:Envelope xmlns:clr="http://schemas.microsoft.com/soap/encoding/clr/1.0" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          SOAP-ENV:encodingStyle="http://schemas.xmlsoap.org/soap/encoding/">
+          <SOAP-ENV:Body>
+            <xsd:anyType
+              id="ref-1"></xsd:anyType>
+          </SOAP-ENV:Body>
+        </SOAP-ENV:Envelope>
+      </DTS:VariableValue>
+    </DTS:Variable>
+    <DTS:Variable
+      DTS:CreationName=""
+      DTS:DTSID="{4A51BC98-3FD1-4839-B178-D8DCD47416BF}"
+      DTS:IncludeInDebugDump="6789"
+      DTS:Namespace="User"
+      DTS:ObjectName="RetVal">
+      <DTS:VariableValue
+        DTS:DataType="3">0</DTS:VariableValue>
+    </DTS:Variable>
+  </DTS:Variables>
+  <DTS:Executables>
+    <DTS:Executable
+      DTS:refId="Package\AltID Maintenance"
+      DTS:CreationName="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:Description="Execute SQL Task"
+      DTS:DTSID="{4DD76ECC-7669-427F-B739-73973099C10E}"
+      DTS:ExecutableType="Microsoft.SqlServer.Dts.Tasks.ExecuteSQLTask.ExecuteSQLTask, Microsoft.SqlServer.SQLTask, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="AltID Maintenance"
+      DTS:TaskContact="Execute SQL Task; Microsoft Corporation; SQL Server 2012; © 2007 Microsoft Corporation; All Rights Reserved;http://www.microsoft.com/sql/support/default.asp;1"
+      DTS:ThreadHint="0">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <SQLTask:SqlTaskData
+          SQLTask:Connection="{03D2AB9C-4512-41BA-8F27-204A5001CF29}"
+          SQLTask:SqlStatementSource="EXEC [enroll].[NVX_AltID_Maintenance]" xmlns:SQLTask="www.microsoft.com/sqlserver/dts/tasks/sqltask" />
+      </DTS:ObjectData>
+    </DTS:Executable>
+    <DTS:Executable
+      DTS:refId="Package\Careclix File"
+      DTS:CreationName="SSIS.Pipeline.3"
+      DTS:Description="Data Flow Task"
+      DTS:DTSID="{1A91BE4B-34AA-4250-97F6-265CB6634A63}"
+      DTS:ExecutableType="SSIS.Pipeline.3"
+      DTS:LocaleID="-1"
+      DTS:ObjectName="Careclix File">
+      <DTS:Variables />
+      <DTS:ObjectData>
+        <pipeline
+          version="1">
+          <components>
+            <component
+              refId="Package\Careclix File\Flat File Destination"
+              componentClassID="DTSAdapter.FlatFileDestination.3"
+              contactInfo="Flat File Destination;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;0"
+              description="Flat File Destination"
+              localeId="1033"
+              name="Flat File Destination">
+              <properties>
+                <property
+                  dataType="System.Boolean"
+                  description="Specifies whether the data will overwrite or append to the destination file."
+                  name="Overwrite">true</property>
+                <property
+                  dataType="System.Null"
+                  description="Specifies the text to write to the destination file before any data is written."
+                  expressionType="Notify"
+                  name="Header" />
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Careclix File\Flat File Destination.Connections[FlatFileConnection]"
+                  connectionManagerID="Package.ConnectionManagers[CareClix]"
+                  connectionManagerRefId="Package.ConnectionManagers[CareClix]"
+                  name="FlatFileConnection" />
+              </connections>
+              <inputs>
+                <input
+                  refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input]"
+                  hasSideEffects="true"
+                  name="Flat File Destination Input">
+                  <inputColumns>
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[username]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="username"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[username]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[username]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[first_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="first_name"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[last_name]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="last_name"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[email]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="email"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[gender]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="1"
+                      cachedName="gender"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[gender]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[phone_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="phone_number"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[phone_number]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone_number]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[alternate_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="alternate_number"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[alternate_number]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[alternate_number]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[date_of_birth]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="date_of_birth"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[date_of_birth]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_of_birth]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[clinic]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="clinic"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[clinic]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[clinic]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[fax_number]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="fax_number"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fax_number]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[fax_number]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[language]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="50"
+                      cachedName="language"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[language]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[language]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[street]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="70"
+                      cachedName="street"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[street]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[country]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="country"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[state]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="2"
+                      cachedName="state"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[state]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[city]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="30"
+                      cachedName="city"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[zipcode]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="zipcode"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[zipcode]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[zipcode]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[Active]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Active"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Active]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Active]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[Terminated]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Terminated"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Terminated]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Terminated]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[GroupName]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="100"
+                      cachedName="GroupName"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[GroupName]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupName]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[Relationship]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="10"
+                      cachedName="Relationship"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Relationship]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Relationship]" />
+                    <inputColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].Columns[Enrollment Status]"
+                      cachedCodepage="1252"
+                      cachedDataType="str"
+                      cachedLength="20"
+                      cachedName="Enrollment Status"
+                      externalMetadataColumnId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Enrollment_Status]"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Enrollment Status]" />
+                  </inputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="username" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[phone_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone_number" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[alternate_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="alternate_number" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[date_of_birth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="date_of_birth" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[clinic]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="clinic" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[fax_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fax_number" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[language]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="language" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="zipcode" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Active]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Terminated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Terminated" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[GroupName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="GroupName" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input].ExternalColumns[Enrollment_Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Enrollment_Status" />
+                  </externalMetadataColumns>
+                </input>
+              </inputs>
+            </component>
+            <component
+              refId="Package\Careclix File\OLE DB Source"
+              componentClassID="DTSAdapter.OLEDBSource.3"
+              contactInfo="OLE DB Source;Microsoft Corporation; Microsoft SQL Server; (C) Microsoft Corporation; All Rights Reserved; http://www.microsoft.com/sql/support;7"
+              description="OLE DB Source"
+              name="OLE DB Source"
+              usesDispositions="true"
+              version="7">
+              <properties>
+                <property
+                  dataType="System.Int32"
+                  description="The number of seconds before a command times out.  A value of 0 indicates an infinite time-out."
+                  name="CommandTimeout">0</property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the name of the database object used to open a rowset."
+                  name="OpenRowset"></property>
+                <property
+                  dataType="System.String"
+                  description="Specifies the variable that contains the name of the database object used to open a rowset."
+                  name="OpenRowsetVariable"></property>
+                <property
+                  dataType="System.String"
+                  description="The SQL command to be executed."
+                  name="SqlCommand"
+                  UITypeEditor="Microsoft.DataTransformationServices.Controls.ModalMultilineStringEditor, Microsoft.DataTransformationServices.Controls, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91">EXECUTE [enroll].[Careclix_ElgibilityFile]
+WITH RESULT SETS (
+	 (
+		  [GroupName]	VARCHAR(100)
+		, [Relationship] 	VARCHAR(10)
+		, [Enrollment Status]	VARCHAR(20)
+		, [username]	varchar(50)
+		, [first_name]	varchar(50)
+		, [last_name]	varchar(50)
+		, [email]	varchar(100)
+		, [gender]	varchar(1)
+		, [phone_number]	varchar(50)
+		, [alternate_number]	varchar(50)
+		, [date_of_birth]	VARCHAR(10)
+		, [clinic]	varchar(50)
+		, [fax_number]	varchar(50)
+		, [language]	varchar(50)
+		, [street]	varchar(70)
+		, [country]	varchar(2)
+		, [state]	varchar(2)
+		, [city]	varchar(30)
+		, [zipcode]	varchar(10)
+		, [Active]	VARCHAR(10)
+		, [Terminated] VARCHAR(10)
+		)
+)</property>
+                <property
+                  dataType="System.String"
+                  description="The variable that contains the SQL command to be executed."
+                  name="SqlCommandVariable"></property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the column code page to use when code page information is unavailable from the data source."
+                  name="DefaultCodePage">1252</property>
+                <property
+                  dataType="System.Boolean"
+                  description="Forces the use of the DefaultCodePage property value when describing character data."
+                  name="AlwaysUseDefaultCodePage">false</property>
+                <property
+                  dataType="System.Int32"
+                  description="Specifies the mode used to access the database."
+                  name="AccessMode"
+                  typeConverter="AccessMode">2</property>
+                <property
+                  dataType="System.String"
+                  description="The mappings between the parameters in the SQL command and variables."
+                  name="ParameterMapping"></property>
+              </properties>
+              <connections>
+                <connection
+                  refId="Package\Careclix File\OLE DB Source.Connections[OleDbConnection]"
+                  connectionManagerID="{03D2AB9C-4512-41BA-8F27-204A5001CF29}:external"
+                  connectionManagerRefId="Project.ConnectionManagers[HSAESQL2VM-1 HSNavanex Joshua Lynn]"
+                  description="The OLE DB runtime connection used to access the database."
+                  name="OleDbConnection" />
+              </connections>
+              <outputs>
+                <output
+                  refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output]"
+                  name="OLE DB Source Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[username]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[username]"
+                      name="username"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[first_name]"
+                      name="first_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[last_name]"
+                      name="last_name"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      length="100"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[email]"
+                      name="email"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      length="1"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[gender]"
+                      name="gender"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone_number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone_number]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[phone_number]"
+                      name="phone_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[alternate_number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[alternate_number]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[alternate_number]"
+                      name="alternate_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_of_birth]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_of_birth]"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[date_of_birth]"
+                      name="date_of_birth"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[clinic]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[clinic]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[clinic]"
+                      name="clinic"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[fax_number]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fax_number]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[fax_number]"
+                      name="fax_number"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[language]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[language]"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[language]"
+                      name="language"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                      length="70"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[street]"
+                      name="street"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      length="2"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[country]"
+                      name="country"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                      length="2"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[state]"
+                      name="state"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      length="30"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[city]"
+                      name="city"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[zipcode]"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[zipcode]"
+                      name="zipcode"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Active]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Active]"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Active]"
+                      name="Active"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Terminated]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Terminated]"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Terminated]"
+                      name="Terminated"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupName]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
+                      length="100"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[GroupName]"
+                      name="GroupName"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Relationship]"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Relationship]"
+                      name="Relationship"
+                      truncationRowDisposition="FailComponent" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Enrollment Status]"
+                      codePage="1252"
+                      dataType="str"
+                      errorOrTruncationOperation="Conversion"
+                      errorRowDisposition="FailComponent"
+                      externalMetadataColumnId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Enrollment Status]"
+                      length="20"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].Columns[Enrollment Status]"
+                      name="Enrollment Status"
+                      truncationRowDisposition="FailComponent" />
+                  </outputColumns>
+                  <externalMetadataColumns
+                    isUsed="True">
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="username" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="first_name" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="last_name" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="email" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      name="gender" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[phone_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="phone_number" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[alternate_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="alternate_number" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[date_of_birth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="date_of_birth" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[clinic]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="clinic" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[fax_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="fax_number" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[language]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      name="language" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      name="street" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="country" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      name="state" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      name="city" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="zipcode" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Active]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Active" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Terminated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Terminated" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[GroupName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      name="GroupName" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      name="Relationship" />
+                    <externalMetadataColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output].ExternalColumns[Enrollment Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      name="Enrollment Status" />
+                  </externalMetadataColumns>
+                </output>
+                <output
+                  refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output]"
+                  isErrorOut="true"
+                  name="OLE DB Source Error Output">
+                  <outputColumns>
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupName]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[GroupName]"
+                      name="GroupName" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Relationship]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Relationship]"
+                      name="Relationship" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Enrollment Status]"
+                      codePage="1252"
+                      dataType="str"
+                      length="20"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Enrollment Status]"
+                      name="Enrollment Status" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[username]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[username]"
+                      name="username" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[first_name]"
+                      name="first_name" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[last_name]"
+                      name="last_name" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[email]"
+                      codePage="1252"
+                      dataType="str"
+                      length="100"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[email]"
+                      name="email" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      codePage="1252"
+                      dataType="str"
+                      length="1"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[gender]"
+                      name="gender" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[phone_number]"
+                      name="phone_number" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[alternate_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[alternate_number]"
+                      name="alternate_number" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_of_birth]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[date_of_birth]"
+                      name="date_of_birth" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[clinic]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[clinic]"
+                      name="clinic" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fax_number]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[fax_number]"
+                      name="fax_number" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language]"
+                      codePage="1252"
+                      dataType="str"
+                      length="50"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[language]"
+                      name="language" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[street]"
+                      codePage="1252"
+                      dataType="str"
+                      length="70"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[street]"
+                      name="street" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[country]"
+                      name="country" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[state]"
+                      codePage="1252"
+                      dataType="str"
+                      length="2"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[state]"
+                      name="state" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      codePage="1252"
+                      dataType="str"
+                      length="30"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[city]"
+                      name="city" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[zipcode]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[zipcode]"
+                      name="zipcode" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Active]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Active]"
+                      name="Active" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Terminated]"
+                      codePage="1252"
+                      dataType="str"
+                      length="10"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[Terminated]"
+                      name="Terminated" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      dataType="i4"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorCode]"
+                      name="ErrorCode"
+                      specialFlags="1" />
+                    <outputColumn
+                      refId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      dataType="i4"
+                      lineageId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Error Output].Columns[ErrorColumn]"
+                      name="ErrorColumn"
+                      specialFlags="2" />
+                  </outputColumns>
+                  <externalMetadataColumns />
+                </output>
+              </outputs>
+            </component>
+          </components>
+          <paths>
+            <path
+              refId="Package\Careclix File.Paths[OLE DB Source Output]"
+              endId="Package\Careclix File\Flat File Destination.Inputs[Flat File Destination Input]"
+              name="OLE DB Source Output"
+              startId="Package\Careclix File\OLE DB Source.Outputs[OLE DB Source Output]" />
+          </paths>
+        </pipeline>
+      </DTS:ObjectData>
+    </DTS:Executable>
+  </DTS:Executables>
+  <DTS:PrecedenceConstraints>
+    <DTS:PrecedenceConstraint
+      DTS:refId="Package.PrecedenceConstraints[Constraint]"
+      DTS:CreationName=""
+      DTS:DTSID="{2C1B91B9-6518-4F3A-BEEE-01141074A991}"
+      DTS:From="Package\AltID Maintenance"
+      DTS:LogicalAnd="True"
+      DTS:ObjectName="Constraint"
+      DTS:To="Package\Careclix File" />
+  </DTS:PrecedenceConstraints>
+  <DTS:DesignTimeProperties><![CDATA[<?xml version="1.0"?>
+<!--This CDATA section contains the layout information of the package. The section includes information such as (x,y) coordinates, width, and height.-->
+<!--If you manually edit this section and make a mistake, you can delete it. -->
+<!--The package will still be able to load normally but the previous layout information will be lost and the designer will automatically re-arrange the elements on the design surface.-->
+<Objects
+  Version="sql11">
+  <!--Each node below will contain properties that do not affect runtime behavior.-->
+  <Package
+    design-time-name="Package">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="165,42"
+          Id="Package\AltID Maintenance"
+          TopLeft="122,172" />
+        <NodeLayout
+          Size="135,42"
+          Id="Package\Careclix File"
+          TopLeft="197.5,271.5" />
+        <EdgeLayout
+          Id="Package.PrecedenceConstraints[Constraint]"
+          TopLeft="204.5,214">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="60.5,57.5"
+              Start="0,0"
+              End="60.5,50">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,24.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,24.75"
+                    Point2="0,28.75"
+                    Point3="4,28.75" />
+                  <mssgle:LineSegment
+                    End="56.5,28.75" />
+                  <mssgle:CubicBezierSegment
+                    Point1="56.5,28.75"
+                    Point2="60.5,28.75"
+                    Point3="60.5,32.75" />
+                  <mssgle:LineSegment
+                    End="60.5,50" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </Package>
+  <TaskHost
+    design-time-name="Package\Careclix File">
+    <LayoutInfo>
+      <GraphLayout
+        Capacity="4" xmlns="clr-namespace:Microsoft.SqlServer.IntegrationServices.Designer.Model.Serialization;assembly=Microsoft.SqlServer.IntegrationServices.Graph" xmlns:mssgle="clr-namespace:Microsoft.SqlServer.Graph.LayoutEngine;assembly=Microsoft.SqlServer.Graph" xmlns:assembly="http://schemas.microsoft.com/winfx/2006/xaml">
+        <NodeLayout
+          Size="172,42"
+          Id="Package\Careclix File\Flat File Destination"
+          TopLeft="340,458" />
+        <NodeLayout
+          Size="150,42"
+          Id="Package\Careclix File\OLE DB Source"
+          TopLeft="192,276" />
+        <EdgeLayout
+          Id="Package\Careclix File.Paths[OLE DB Source Output]"
+          TopLeft="267,318">
+          <EdgeLayout.Curve>
+            <mssgle:Curve
+              StartConnector="{assembly:Null}"
+              EndConnector="159,140"
+              Start="0,0"
+              End="159,132.5">
+              <mssgle:Curve.Segments>
+                <mssgle:SegmentCollection
+                  Capacity="5">
+                  <mssgle:LineSegment
+                    End="0,66" />
+                  <mssgle:CubicBezierSegment
+                    Point1="0,66"
+                    Point2="0,70"
+                    Point3="4,70" />
+                  <mssgle:LineSegment
+                    End="155,70" />
+                  <mssgle:CubicBezierSegment
+                    Point1="155,70"
+                    Point2="159,70"
+                    Point3="159,74" />
+                  <mssgle:LineSegment
+                    End="159,132.5" />
+                </mssgle:SegmentCollection>
+              </mssgle:Curve.Segments>
+            </mssgle:Curve>
+          </EdgeLayout.Curve>
+          <EdgeLayout.Labels>
+            <EdgeLabelCollection />
+          </EdgeLayout.Labels>
+        </EdgeLayout>
+      </GraphLayout>
+    </LayoutInfo>
+  </TaskHost>
+  <PipelineComponentMetadata
+    design-time-name="Package\Careclix File\OLE DB Source">
+    <Properties>
+      <Property>
+        <Name>DataSourceViewID</Name>
+      </Property>
+    </Properties>
+  </PipelineComponentMetadata>
+</Objects>]]></DTS:DesignTimeProperties>
+</DTS:Executable>

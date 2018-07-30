@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{159641D6-6404-4A2A-AE62-294DE0FE8301}") = "CarrierFiles", "CarrierFiles\CarrierFiles.dtproj", "{4FB46B85-69D5-41BB-948C-93533BCADF75}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Development|Default = Development|Default
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FB46B85-69D5-41BB-948C-93533BCADF75}.Development|Default.ActiveCfg = Development
+		{4FB46B85-69D5-41BB-948C-93533BCADF75}.Development|Default.Build.0 = Development
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(VaultVsipSolution-v2) = preSolution
+		VaultHost = http://10.226.101.20/VaultService
+		VaultRepositoryID = 2
+		VaultRepositoryGUID = 837dfb68-5f95-4167-8f67-76f515119411
+		ProjectCount = 1
+		ProjectRelativeDiskPath1 = CaremarkFeedTest\CarrierFiles.dtproj
+	EndGlobalSection
+EndGlobal

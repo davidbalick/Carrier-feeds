@@ -1,0 +1,14 @@
+﻿<?xml version="1.0"?>
+<DTS:ConnectionManager xmlns:DTS="www.microsoft.com/SqlServer/Dts"
+  DTS:ObjectName="HSAESQL2VM-1 HSNavanex_WorkingDB Joshua Lynn"
+  DTS:DTSID="{1BC345B7-454E-4831-9C5A-FAEF8FB9F76C}"
+  DTS:CreationName="OLEDB">
+  <DTS:ObjectData>
+    <DTS:ConnectionManager
+      DTS:ConnectionString="Data Source=hsaesql2vm-1.hs2.loc;User ID=david.balick;Initial Catalog=HSNavanex_WorkingDB;Provider=SQLNCLI11.1;Persist Security Info=True;Auto Translate=False;">
+      <DTS:Password
+        DTS:Name="Password"
+        Sensitive="1">AQAAANCMnd8BFdERjHoAwE/Cl+sBAAAAGRUED1F5kEiJ9fwCTwIODwAAAAACAAAAAAADZgAAwAAAABAAAACcjLau1u2TWCN7bMLf544IAAAAAASAAACgAAAAEAAAAJLZ9StoAi0VKz6vRqEN7jZ4AAAATwLDCJAD0KbIbT4bwnUUPoNRK5Ewhj5vwuOXQwTkxe28TY70Wm9jkYSMpVHcZ2RHlqen6SJleY3U3FBnniD1rBFfdKLg0uyzWHeYMkAE9qUH3io7XrLgmR9RfFNRW2BVt1IgpgbnmLJRCPB+fER1yIhMP/Nw3lNAFAAAAHrZLlNaHRo16y6mUMqzGwHzTLAr</DTS:Password>
+    </DTS:ConnectionManager>
+  </DTS:ObjectData>
+</DTS:ConnectionManager>
